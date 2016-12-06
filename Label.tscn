@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://plane.png" type="Texture" id=1]
+[ext_resource path="res://plane.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://sprite.gd" type="Script" id=4]
+
+[node name="Label" type="Label"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 1.0
+margin/right = 56.0
+margin/bottom = 15.0
+text = "yayayaya"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ToolButton" type="ToolButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 600.0
+margin/top = 273.0
+margin/right = 677.0
+margin/bottom = 306.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "lklk"
+flat = false
+
+[node name="Plane" type="Sprite" parent="."]
+
+transform/pos = Vector2( 513.347, 544.046 )
+transform/scale = Vector2( 0.232234, 0.232234 )
+texture = ExtResource( 1 )
+script/script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 73.9659, 96.8449 )
+transform/rot = 41.5056
+transform/scale = Vector2( 2.29157, 1.68475 )
+texture = ExtResource( 3 )
+vframes = 2
+hframes = 2
+frame = 2
+script/script = ExtResource( 4 )
+
+[connection signal="pressed" from="ToolButton" to="Sprite" method="_on_ToolButton_pressed"]
+
+
