@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://plane.png" type="Texture" id=1]
 [ext_resource path="res://plane.gd" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://sprite.gd" type="Script" id=4]
+[ext_resource path="res://shot_1.smp" type="Sample" id=3]
+[ext_resource path="res://shot_2.smp" type="Sample" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://sprite.gd" type="Script" id=6]
+
+[sub_resource type="SampleLibrary" id=1]
+
+samples/shot1 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 3 ) }
+samples/shot2 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 4 ) }
 
 [node name="Label" type="Label"]
 
@@ -44,16 +51,33 @@ texture = ExtResource( 1 )
 hframes = 4
 script/script = ExtResource( 2 )
 
+[node name="ShotPlayer" type="SamplePlayer" parent="Plane"]
+
+config/polyphony = 4
+config/samples = SubResource( 1 )
+default/volume_db = 0.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.0
+default/chorus_send = 0.0
+
 [node name="Sprite" type="Sprite" parent="."]
 
 transform/pos = Vector2( 73.9659, 96.8449 )
 transform/rot = 41.5056
 transform/scale = Vector2( 2.29157, 1.68475 )
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 vframes = 2
 hframes = 2
 frame = 2
-script/script = ExtResource( 4 )
+script/script = ExtResource( 6 )
 
 [connection signal="pressed" from="ToolButton" to="Sprite" method="_on_ToolButton_pressed"]
 

@@ -20,6 +20,10 @@ func _process(delta):
 			self.get_parent().add_child(node)
 			node.set_z(0)
 			node.set_pos(self.get_pos() + Vector2(-4, -50))
+			if (randi()%2):
+				self.get_node("ShotPlayer").play("shot1")
+			else:
+				self.get_node("ShotPlayer").play("shot2")
 			#cooldown = 0.1
 		cooldown = 0.1
 	else:
