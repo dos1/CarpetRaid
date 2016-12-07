@@ -38,9 +38,10 @@ flat = false
 
 [node name="Plane" type="Sprite" parent="."]
 
-transform/pos = Vector2( 513.347, 544.046 )
-transform/scale = Vector2( 0.232234, 0.232234 )
+transform/pos = Vector2( 512.498, 524.113 )
+transform/scale = Vector2( 0.100702, 0.100702 )
 texture = ExtResource( 1 )
+hframes = 4
 script/script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
