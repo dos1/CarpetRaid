@@ -4,10 +4,10 @@
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://boom.smp" type="Sample" id=3]
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
+[sub_resource type="ConvexPolygonShape2D" id=3]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 0, 10, 0, 0, 10, 0, 10, 10 )
+points = Vector2Array( 9.34569, 1.99492, 9.33138, 11.9011, -0.557459, 11.9986, -0.57177, 2.01442 )
 
 [sub_resource type="SampleLibrary" id=2]
 
@@ -15,16 +15,13 @@ samples/boom = { "db":0.0, "pitch":1.0, "sample":ExtResource( 3 ) }
 
 [node name="Enemy" type="Node"]
 
-editor/display_folded = true
-
 [node name="Area2D" type="Area2D" parent="."]
 
-editor/display_folded = true
-transform/pos = Vector2( 322.195, 229.09 )
-transform/scale = Vector2( 0.412359, 0.403451 )
+transform/pos = Vector2( 338.643, 212.998 )
+transform/scale = Vector2( 0.926351, 0.906339 )
 input/pickable = true
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 14.6121, 0, 0, 10.9603, -72, -53.3235 )
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 14.6121, 0, 0, 10.9603, -61.8744, -74.5967 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -40,10 +37,10 @@ texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 
-transform/pos = Vector2( -72, -53.3235 )
+transform/pos = Vector2( -61.8744, -74.5967 )
 transform/scale = Vector2( 14.6121, 10.9603 )
 build_mode = 0
-polygon = Vector2Array( 10, 10, 10, 0, 0, 0, 0, 10 )
+polygon = Vector2Array( -0.57177, 2.01442, -0.557459, 11.9986, 9.33138, 11.9011, 9.34569, 1.99492 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 

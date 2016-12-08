@@ -19,4 +19,3 @@ func _ready():
 	randomize()
 	self.set_z(10)
 	self.set_process(true)
-
