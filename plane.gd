@@ -9,11 +9,13 @@ var bullet = preload("res://Bullet.tscn")
 var acc = 0
 var cooldown = 0
 
+var SPEED = 400
+
 func _process(delta):
 	if (Input.is_action_pressed("move_left")):
-		self.move_local_x(-200 * delta)
+		self.move_local_x(-1 * SPEED * delta)
 	if (Input.is_action_pressed("move_right")):
-		self.move_local_x(200 * delta)
+		self.move_local_x(SPEED * delta)
 	if (Input.is_action_pressed("shoot")):
 		if (cooldown <= 0):
 			var node = bullet.instance()
@@ -39,8 +41,19 @@ func _process(delta):
 		self.set_frame(frame)
 
 
+func _input(event):
+	if (event.type == InputEvent.KEY) and (event.pressed):
+		if (event.scancode == KEY_ESCAPE):
+			self.get_tree().set_input_as_handled()
+			self.get_tree().quit()
+		elif (event.scancode == KEY_F):
+			self.get_tree().set_input_as_handled()
+			OS.set_window_fullscreen(!OS.is_video_mode_fullscreen())
+
+
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	self.set_z(1)
 	self.set_process(true)
+	self.set_process_input(true)
