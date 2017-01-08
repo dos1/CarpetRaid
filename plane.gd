@@ -8,12 +8,14 @@ var bullet = preload("res://Bullet.tscn")
 
 var SPEED = 400
 
+var pressed = false
+
 func _process(delta):
 	if (Input.is_action_pressed("move_left")):
 		self.move_local_x(-1 * SPEED * delta)
 	if (Input.is_action_pressed("move_right")):
 		self.move_local_x(SPEED * delta)
-	if (Input.is_action_pressed("shoot")):
+	if (Input.is_action_pressed("shoot")) and not self.pressed:
 		if not self.get_parent().has_node("Bullet"):
 			var node = bullet.instance()
 			node.add_to_group("bullets")
@@ -24,6 +26,7 @@ func _process(delta):
 				self.get_node("ShotPlayer").play("shot1")
 			else:
 				self.get_node("ShotPlayer").play("shot2")
+	self.pressed = Input.is_action_pressed("shoot")
 
 func _ready():
 	# Called every time the node is added to the scene.

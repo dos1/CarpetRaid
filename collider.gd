@@ -11,7 +11,7 @@ func _on_Area2D_area_enter(bullet):
 		bullet.queue_free()
 	self.queue_free()
 	#self.set_pos(Vector2(rand_range(100, 1800), rand_range(50, 750)))
-	self.get_node("../BoomPlayer").play("boom")
+	self.get_node("../../BoomPlayer").play("boom")
 
 func _process(delta):
 	#self.set_rot(self.get_rot() + 0.05)
@@ -19,7 +19,7 @@ func _process(delta):
 	if self.acc >= 0.1:
 		self.acc -= 0.1
 		var frame = self.get_node("Sprite").get_frame() + 1
-		if (frame>3):
+		if (frame>self.get_node("Sprite").get_hframes()-1):
 			frame=0
 		self.get_node("Sprite").set_frame(frame)
 
