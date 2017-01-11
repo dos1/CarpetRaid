@@ -5,7 +5,7 @@ extends Node2D
 # var a=2
 # var b="textvar"
 var enemy = preload("res://Enemy.tscn")
-var SPEED = 200
+var SPEED = 150
 var ENEMIES = ["Helicopter", "Rocket", "Boatie", "Boat"]
 
 var counter = -1
