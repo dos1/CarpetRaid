@@ -6,12 +6,21 @@ extends Area2D
 
 var acc = 0
 
-func _on_Area2D_area_enter(bullet):
-	if bullet.is_in_group("bullets"):
-		bullet.queue_free()
-	self.queue_free()
-	#self.set_pos(Vector2(rand_range(100, 1800), rand_range(50, 750)))
-	self.get_node("../../BoomPlayer").play("boom")
+func _on_Area2D_area_enter(body):
+	if body.is_in_group("bullets"):
+		body.queue_free()
+		self.queue_free()
+		#self.set_pos(Vector2(rand_range(100, 1800), rand_range(50, 750)))
+		self.get_node("../../BoomPlayer").play("boom")
+
+	if body.is_in_group("player"):
+		self.queue_free()
+		#self.set_pos(Vector2(rand_range(100, 1800), rand_range(50, 750)))
+		self.get_node("../../BoomPlayer").play("boom")
+
+	if body.is_in_group("edge"):
+		self.get_parent().get_parent().mirror()
+		return
 
 func _process(delta):
 	#self.set_rot(self.get_rot() + 0.05)

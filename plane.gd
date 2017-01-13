@@ -34,3 +34,9 @@ func _ready():
 	self.set_z(1)
 	self.set_process(true)
 	self.set_process_input(true)
+	self.get_node("Area2D").add_to_group("player")
+
+func _on_Area2D_area_enter( area ):
+	print(area)
+	if area.is_in_group("edge"):
+		self.set_pos(Vector2(1920/2, self.get_pos().y))

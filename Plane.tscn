@@ -135,4 +135,6 @@ polygon = Vector2Array( 506.542, 475.043, 502.124, 477.252, 501.019, 482.301, 49
 shape_range = Vector2( 0, 9 )
 trigger = false
 
+[connection signal="area_enter" from="Area2D" to="." method="_on_Area2D_area_enter"]
+
 
