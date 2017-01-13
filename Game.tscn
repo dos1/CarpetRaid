@@ -74,6 +74,7 @@ transform/pos = Vector2( 949.166, 814.613 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 112.952, -429.707 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )

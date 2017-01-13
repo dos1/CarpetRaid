@@ -1,4 +1,4 @@
-
+tool
 extends Node2D
 
 # member variables here, example:
@@ -7,9 +7,9 @@ extends Node2D
 
 var SPEED = 200
 
-export(String, "Rocket", "Boatie", "Boat", "Helicopter") var type
+export(String, "Rocket", "Boatie", "Boat", "Helicopter") var type setget set_type
 export var moving = true
-export var left = true
+export var left = true setget set_facing_left
 export var contained = true
 
 func _process(delta):
@@ -28,28 +28,36 @@ func _process(delta):
 func set_contained(con):
 	self.contained = con
 
-func set_type(type):
-	self.type = type
-	for child in self.get_node("Sprites").get_children():
-		if child.get_name()!=type:
-			child.free()
+func set_type(t):
+	type = t
+	if self.get_node("Sprites"):
+		for child in self.get_node("Sprites").get_children():
+			if child.get_name()!=type:
+				if self.get_tree() and not self.get_tree().is_editor_hint():
+					child.free()
+				else:
+					child.set_opacity(0)
+			else:
+				child.set_opacity(1)
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	self.set_type(self.type)
 	self.set_facing_left(self.left)
-	self.set_process(true)
+	if self.get_tree() and not self.get_tree().is_editor_hint():
+		self.set_process(true)
 
 func set_moving(moving):
 	self.moving = moving
 	
-func set_facing_left(left):
-	self.left = left
-	if not left:
-		self.get_node("Sprites").set_scale(Vector2(-1,1))
-	else:
-		self.get_node("Sprites").set_scale(Vector2(1,1))
+func set_facing_left(l):
+	left = l
+	if self.get_node("Sprites"):
+		if not left:
+			self.get_node("Sprites").set_scale(Vector2(-1,1))
+		else:
+			self.get_node("Sprites").set_scale(Vector2(1,1))
 		
 func mirror():
 	if not self.contained:
