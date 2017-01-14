@@ -20,7 +20,7 @@ func _process(delta):
 			var node = bullet.instance()
 			node.add_to_group("bullets")
 			self.get_parent().add_child(node)
-			node.set_z(0)
+			node.set_z(15)
 			node.set_pos(self.get_pos() + Vector2(-4, -50))
 			if (randi()%2):
 				self.get_node("ShotPlayer").play("shot1")
@@ -39,6 +39,6 @@ func _ready():
 
 func _on_Area2D_area_enter( area ):
 	print(area, area.get_groups())
-	if area.is_in_group("edge") or area.is_in_group("enemies"):
+	if area.is_in_group("edge") or area.is_in_group("enemies") or area.is_in_group("bridge"):
 		Globals.set('lifes', Globals.get('lifes')-1)
 		self.set_pos(Vector2(1920/2, self.get_pos().y))
