@@ -42,5 +42,6 @@ func _ready():
 			#self.get_node("Collider").set_polygon(poly)
 
 func _on_Area2D_area_enter( area ):
-	pass
+	if area.is_in_group("bullets"):
+		area.queue_free()
 	#print("edge: ", area)

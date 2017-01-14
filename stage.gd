@@ -32,6 +32,8 @@ func _process(delta):
 		modifier = 0.5
 	
 	self.move_local_y(SPEED * delta * modifier)
+	self.get_parent().get_node("Background").move_local_y(SPEED * delta * modifier + SPEED * delta * 0.5)
+	
 	counter -= delta
 	if counter < 0:
 		#addEnemy()
@@ -40,7 +42,7 @@ func _process(delta):
 	if self.get_pos().y - self.get_item_and_children_rect().size.height + 1500 >=0:
 		var node = level1.instance()
 		self.add_child(node)
-		node.set_pos(Vector2(0, -self.get_item_and_children_rect().size.height + 200))
+		node.set_pos(Vector2(0, -self.get_item_and_children_rect().size.height + 600))
 
 func _ready():
 	# Called every time the node is added to the scene.

@@ -39,4 +39,5 @@ func _ready():
 func _on_Area2D_area_enter( area ):
 	print(area, area.get_groups())
 	if area.is_in_group("edge") or area.is_in_group("enemies"):
+		Globals.set('lifes', Globals.get('lifes')-1)
 		self.set_pos(Vector2(1920/2, self.get_pos().y))
