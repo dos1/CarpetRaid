@@ -37,6 +37,6 @@ func _ready():
 	self.get_node("Area2D").add_to_group("player")
 
 func _on_Area2D_area_enter( area ):
-	print(area)
-	if area.is_in_group("edge"):
+	print(area, area.get_groups())
+	if area.is_in_group("edge") or area.is_in_group("enemies"):
 		self.set_pos(Vector2(1920/2, self.get_pos().y))

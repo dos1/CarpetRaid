@@ -8,22 +8,22 @@
 [ext_resource path="res://Helikopter.png" type="Texture" id=6]
 [ext_resource path="res://boom.smp" type="Sample" id=7]
 
-[sub_resource type="ConvexPolygonShape2D" id=60]
+[sub_resource type="ConvexPolygonShape2D" id=100]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 3.86179, 10.4762, 4.31265, 14.4193, 2.2928, 13.7701, 2.63546, 10.4522 )
 
-[sub_resource type="ConvexPolygonShape2D" id=61]
+[sub_resource type="ConvexPolygonShape2D" id=101]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 9.72296, 13.169, 6.87353, 14.1308, 6.74729, 9.77896, 6.74729, 5.6195 )
 
-[sub_resource type="ConvexPolygonShape2D" id=62]
+[sub_resource type="ConvexPolygonShape2D" id=102]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -0.0696967, 9.39427, -0.177903, 6.2927, 0.254922, 2.6141, 1.17467, -1.5694, 2.27477, -4.06988, 4.00607, -2.60325, 5.7013, 0.714698, 6.74729, 5.6195, 6.74729, 9.77896, 3.86179, 10.4762, 2.63546, 10.4522 )
 
-[sub_resource type="ConvexPolygonShape2D" id=63]
+[sub_resource type="ConvexPolygonShape2D" id=103]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -0.0696967, 9.39427, -0.700899, 13.7701, -1.94527, 13.5297, -2.5404, 13.0729, -1.51245, 9.25001, -0.177903, 6.2927 )
@@ -199,6 +199,7 @@ type = "Rocket"
 moving = true
 left = true
 contained = false
+speed_modifier = 1
 
 [node name="Sprites" type="Node2D" parent="."]
 
@@ -207,16 +208,16 @@ contained = false
 transform/rot = 90.0
 transform/scale = Vector2( 0.25, 0.25 )
 input/pickable = true
-shapes/0/shape = SubResource( 60 )
+shapes/0/shape = SubResource( 100 )
 shapes/0/transform = Matrix32( 14.6121, 0, 0, 10.9603, -54.9395, -86.0276 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 61 )
+shapes/1/shape = SubResource( 101 )
 shapes/1/transform = Matrix32( 14.6121, 0, 0, 10.9603, -54.9395, -86.0276 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 62 )
+shapes/2/shape = SubResource( 102 )
 shapes/2/transform = Matrix32( 14.6121, 0, 0, 10.9603, -54.9395, -86.0276 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 63 )
+shapes/3/shape = SubResource( 103 )
 shapes/3/transform = Matrix32( 14.6121, 0, 0, 10.9603, -54.9395, -86.0276 )
 shapes/3/trigger = false
 gravity_vec = Vector2( 0, 1 )

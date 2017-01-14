@@ -5,6 +5,7 @@ extends Node2D
 # var a=2
 # var b="textvar"
 var enemy = preload("res://Enemy.tscn")
+var level1 = preload("res://level1.tscn")
 var SPEED = 150
 var ENEMIES = ["Helicopter", "Rocket", "Boatie", "Boat"]
 
@@ -33,8 +34,13 @@ func _process(delta):
 	self.move_local_y(SPEED * delta * modifier)
 	counter -= delta
 	if counter < 0:
-		addEnemy()
+		#addEnemy()
 		counter = 1.5
+	
+	if self.get_pos().y - self.get_item_and_children_rect().size.height + 1500 >=0:
+		var node = level1.instance()
+		self.add_child(node)
+		node.set_pos(Vector2(0, -self.get_item_and_children_rect().size.height + 200))
 
 func _ready():
 	# Called every time the node is added to the scene.
