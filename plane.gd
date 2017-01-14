@@ -27,6 +27,7 @@ func _process(delta):
 			else:
 				self.get_node("ShotPlayer").play("shot2")
 	self.pressed = Input.is_action_pressed("shoot")
+	Globals.set('fuel', Globals.get('fuel') - 1)
 
 func _ready():
 	# Called every time the node is added to the scene.

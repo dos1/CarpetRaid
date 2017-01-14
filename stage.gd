@@ -39,10 +39,12 @@ func _process(delta):
 		#addEnemy()
 		counter = 1.5
 	
-	if self.get_pos().y - self.get_item_and_children_rect().size.height + 1500 >=0:
+	#print(self.get_pos().y, self.get_item_and_children_rect().size.height - 1080)
+	
+	if self.get_pos().y - self.get_item_and_children_rect().size.height + 1080 + 400 >=0:
 		var node = level1.instance()
 		self.add_child(node)
-		node.set_pos(Vector2(0, -self.get_item_and_children_rect().size.height + 600))
+		node.set_pos(Vector2(0, -self.get_item_and_children_rect().size.height + 400))
 
 func _ready():
 	# Called every time the node is added to the scene.

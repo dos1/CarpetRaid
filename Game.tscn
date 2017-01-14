@@ -8,19 +8,19 @@
 [ext_resource path="res://Plane.tscn" type="PackedScene" id=6]
 [ext_resource path="res://GUIbg.png" type="Texture" id=7]
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=1]
 
 script/source = "extends Node2D\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tif self.get_pos().y >= 1024:\n\t\tself.set_pos(self.get_pos() + Vector2(0, -1024))\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n"
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id=2]
 
 script/source = "extends Label\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tself.set_text(\"Score: \" + str(Globals.get(\'score\')))\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n\tpass\n"
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=3]
 
 script/source = "extends Label\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tself.set_text(\"Lifes: \" + str(Globals.get(\'lifes\')))\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n\tpass\n"
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=4]
 
 script/source = "extends Label\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tself.set_text(\"Fuel: \" + str(Globals.get(\'fuel\')))\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n\tpass\n"
 
@@ -30,7 +30,7 @@ script/script = ExtResource( 1 )
 
 [node name="Background" type="Node2D" parent="."]
 
-script/script = SubResource( 4 )
+script/script = SubResource( 1 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Background"]
 
@@ -113,7 +113,7 @@ text = "score: 123244"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = SubResource( 1 )
+script/script = SubResource( 2 )
 
 [node name="Lifes" type="Label" parent="Node2D/Polygon2D"]
 
@@ -131,7 +131,7 @@ text = "lives: 42345"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = SubResource( 2 )
+script/script = SubResource( 3 )
 
 [node name="Fuel" type="Label" parent="Node2D/Polygon2D"]
 
@@ -149,6 +149,6 @@ text = "fuel: 2435"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = SubResource( 3 )
+script/script = SubResource( 4 )
 
 
