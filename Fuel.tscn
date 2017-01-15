@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://fuel.gd" type="Script" id=1]
-[ext_resource path="res://cukierek.png" type="Texture" id=2]
+[ext_resource path="res://bateria.png" type="Texture" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -165.047, -606.489, 319.231, -620.049, 253.369, 629.389, -217.35, 594.521, -290.96, -27.2925 )
+points = Vector2Array( 373.479, -674.498, 344.219, 832.415, -387.293, 778.771, -421.429, -723.265, -158.085, -728.142, 110.137, -713.512 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 61.3682, -786.663, 110.137, -713.512, -158.085, -728.142, -133.701, -801.293 )
 
 [node name="Fuel" type="Node2D"]
 
@@ -14,11 +19,13 @@ transform/pos = Vector2( 1172.31, -311.849 )
 
 [node name="Area2D 2" type="Area2D" parent="."]
 
-editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 0.1, 0, 0, 0.1, 0, 0 )
 shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 0.1, 0, 0, 0.1, 0, 0 )
+shapes/1/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
@@ -29,8 +36,8 @@ script/script = ExtResource( 1 )
 
 transform/scale = Vector2( 0.1, 0.1 )
 build_mode = 0
-polygon = Vector2Array( -165.047, -606.489, 319.231, -620.049, 253.369, 629.389, -217.35, 594.521, -290.96, -27.2925 )
-shape_range = Vector2( 0, 0 )
+polygon = Vector2Array( -421.429, -723.265, -387.293, 778.771, 344.219, 832.415, 373.479, -674.498, 110.137, -713.512, 61.3682, -786.663, -133.701, -801.293, -158.085, -728.142 )
+shape_range = Vector2( 0, 1 )
 trigger = false
 
 [node name="cukierek" type="Sprite" parent="Area2D 2"]
