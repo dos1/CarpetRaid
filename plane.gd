@@ -6,7 +6,8 @@ extends Node2D
 # var b="textvar"
 var bullet = preload("res://Bullet.tscn")
 
-var SPEED = 400
+var SPEED = 200
+var FUEL_DISCHARGE_SPEED = 1
 
 var pressed = false
 
@@ -27,7 +28,7 @@ func _process(delta):
 			else:
 				self.get_node("ShotPlayer").play("shot2")
 	self.pressed = Input.is_action_pressed("shoot")
-	Globals.set('fuel', Globals.get('fuel') - 1)
+	Globals.set('fuel', Globals.get('fuel') - FUEL_DISCHARGE_SPEED)
 
 func _ready():
 	# Called every time the node is added to the scene.

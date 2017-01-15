@@ -10,7 +10,7 @@ func _on_Area2D_area_enter(body):
 	if body.is_in_group("bullets"):
 		body.queue_free()
 		self.queue_free()
-		Globals.set('score', Globals.get('score')+100)
+		Globals.set('score', Globals.get('score')+self.get_parent().get_parent().get_score())
 		#self.set_pos(Vector2(rand_range(100, 1800), rand_range(50, 750)))
 		self.get_node("../../BoomPlayer").play("boom")
 

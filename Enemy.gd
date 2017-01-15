@@ -5,7 +5,7 @@ extends Node2D
 # var a=2
 # var b="textvar"
 
-var SPEED = 200
+var SPEED = 100
 
 export(String, "Rocket", "Boatie", "Boat", "Helicopter") var type setget set_type
 export var moving = true
@@ -14,10 +14,17 @@ export var contained = true
 export var speed_modifier = 1
 
 var SPEED_MODIFIERS = {
-  "Rocket": 1.5,
+  "Rocket": 3,
   "Boatie": 1,
   "Boat": 1,
   "Helicopter": 1
+}
+
+var POINTS = {
+  "Rocket": 100,
+  "Boatie": 100,
+  "Boat": 100,
+  "Helicopter": 100
 }
 
 var speed_type_modifier = 1
@@ -61,6 +68,9 @@ func _ready():
 
 func set_moving(moving):
 	self.moving = moving
+	
+func get_score():
+	return POINTS[self.type]
 	
 func set_facing_left(l):
 	left = l

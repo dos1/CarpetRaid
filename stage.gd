@@ -7,7 +7,7 @@ extends Node2D
 var enemy = preload("res://Enemy.tscn")
 var level1 = preload("res://level1.tscn")
 var bridge = preload("res://Bridge.tscn")
-var SPEED = 150
+var SPEED = 100
 var ENEMIES = ["Helicopter", "Rocket", "Boatie", "Boat"]
 
 var counter = -1
@@ -30,7 +30,7 @@ func _process(delta):
 	if Input.is_action_pressed("move_fast"):
 		modifier = 1.5
 	if Input.is_action_pressed("move_slow"):
-		modifier = 0.5
+		modifier = 0.75
 	
 	self.move_local_y(SPEED * delta * modifier)
 	self.get_parent().get_node("Background").move_local_y(SPEED * delta * modifier + SPEED * delta * 0.5)

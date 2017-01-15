@@ -120,7 +120,7 @@ transform/pos = Vector2( 884.708, 501.206 )
 [node name="Enemy 3" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 830.898, -81.0682 )
-type = "Boat"
+type = "Boatie"
 moving = false
 contained = true
 
