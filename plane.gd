@@ -14,6 +14,8 @@ var pressed = false
 var current_level = 0
 
 func _process(delta):
+	if not Globals.get("started"):
+		return
 	if (Input.is_action_pressed("move_left")):
 		self.move_local_x(-1 * SPEED * delta)
 	if (Input.is_action_pressed("move_right")):
@@ -46,5 +48,9 @@ func _on_Area2D_area_enter( area ):
 		Globals.set('lifes', Globals.get('lifes')-1)
 		self.set_pos(Vector2(1920/2, self.get_pos().y))
 		self.get_parent().get_node("Stage").reload(current_level)
+		
+		if Globals.get('lifes') < 0:
+			self.get_parent().get_node("Stage").reload(0)
+			self.get_parent().get_node("Stage").stop()
 	if area.is_in_group("checkpoint"):
 		current_level = int(area.get_name())-1

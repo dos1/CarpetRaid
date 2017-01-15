@@ -20,8 +20,5 @@ func _process(delta):
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	Globals.set('score', 0)
-	Globals.set('lifes', 3)
-	Globals.set('fuel', 1000)
 	self.set_process_input(true)
 	self.set_process(true)

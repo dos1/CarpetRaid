@@ -30,6 +30,9 @@ var POINTS = {
 var speed_type_modifier = 1
 
 func _process(delta):
+	if not Globals.get("started"):
+		return
+
 	if self.moving:
 		if self.left:
 			self.move_local_x(-1*SPEED*delta*speed_modifier*speed_type_modifier)

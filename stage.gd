@@ -14,6 +14,8 @@ var bridge = preload("res://Bridge.tscn")
 var SPEED = 100
 var ENEMIES = ["Helicopter", "Rocket", "Boatie", "Boat"]
 
+var started = false
+
 var counter = -1
 
 func addEnemy():
@@ -29,7 +31,20 @@ func addEnemy():
 	node.set_pos(Vector2(1920/2, -self.get_pos().y - 100))
 	self.add_child(node)
 
+func stop():
+	self.started = false
+	Globals.set("started", false)
+	Globals.set('score', 0)
+	Globals.set('lifes', 3)
+	Globals.set('fuel', 1000)
+
 func _process(delta):
+	if Input.is_action_pressed("shoot"):
+		self.started = true
+		Globals.set("started", true)
+	
+	if not self.started:
+		return
 	var modifier = 1
 	if Input.is_action_pressed("move_fast"):
 		modifier = 1.5
@@ -79,5 +94,6 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	#addEnemy()
-	reload(0)
+	self.stop()
+	self.reload(0)
 	self.set_process(true)

@@ -115,7 +115,7 @@ trigger = false
 
 [node name="Enemy 2" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 884.708, 501.206 )
+transform/pos = Vector2( 879.129, 448.206 )
 
 [node name="Enemy 3" parent="." instance=ExtResource( 2 )]
 
