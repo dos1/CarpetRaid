@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://game.gd" type="Script" id=1]
 [ext_resource path="res://tlowoda_1024.png" type="Texture" id=2]
@@ -7,18 +7,24 @@
 [ext_resource path="res://level1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Plane.tscn" type="PackedScene" id=6]
 [ext_resource path="res://GUIbg.png" type="Texture" id=7]
+[ext_resource path="res://Interfejs.png" type="Texture" id=8]
+[ext_resource path="res://pasekpaliwa_720.png" type="Texture" id=9]
 
 [sub_resource type="GDScript" id=1]
 
 script/source = "extends Node2D\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tif self.get_pos().y >= 1024:\n\t\tself.set_pos(self.get_pos() + Vector2(0, -1024))\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n"
 
+[sub_resource type="GDScript" id=5]
+
+script/source = "extends Polygon2D\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tvar p = self.get_polygon()\n\tp[2].x = 725.1894 * Globals.get(\'fuel\') / 1000\n\tp[3].x = 713.58 * Globals.get(\'fuel\') / 1000\n\tself.set_polygon(p)\n\t\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n\tpass\n"
+
 [sub_resource type="GDScript" id=2]
 
-script/source = "extends Label\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tself.set_text(\"Score: \" + str(Globals.get(\'score\')))\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n\tpass\n"
+script/source = "extends Label\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tself.set_text(str(Globals.get(\'score\')))\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n\tpass\n"
 
 [sub_resource type="GDScript" id=3]
 
-script/source = "extends Label\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tself.set_text(\"Lifes: \" + str(Globals.get(\'lifes\')))\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n\tpass\n"
+script/source = "extends Label\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tself.set_text(str(Globals.get(\'lifes\')))\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n\tpass\n"
 
 [sub_resource type="GDScript" id=4]
 
@@ -97,19 +103,46 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 
+[node name="Interfejs" type="Sprite" parent="Node2D/Polygon2D"]
+
+transform/pos = Vector2( 934.555, 998.407 )
+transform/scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 8 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/Polygon2D/Interfejs"]
+
+transform/pos = Vector2( -446.487, -24.7456 )
+transform/scale = Vector2( 1.25627, 1.02569 )
+polygon = Vector2Array( 3.72119, -96.5469, -4.57178, -5.34644, 725.189, -2.4043, 713.58, -102.431 )
+uv = Vector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = ExtResource( 9 )
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+script/script = SubResource( 5 )
+
 [node name="Score" type="Label" parent="Node2D/Polygon2D"]
 
-rect/scale = Vector2( 3, 3 )
+anchor/left = 1
+anchor/top = 3
+anchor/right = 1
+anchor/bottom = 3
+rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 339.0
-margin/top = 926.0
-margin/right = 488.0
-margin/bottom = 952.0
+margin/left = 1640.96
+margin/top = -730.818
+margin/right = 1491.96
+margin/bottom = -756.818
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "score: 123244"
+text = "9999"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -117,17 +150,17 @@ script/script = SubResource( 2 )
 
 [node name="Lifes" type="Label" parent="Node2D/Polygon2D"]
 
-rect/scale = Vector2( 3, 3 )
+rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 966.0
-margin/top = 902.0
-margin/right = 1115.0
-margin/bottom = 928.0
+margin/left = 751.0
+margin/top = 996.0
+margin/right = 900.0
+margin/bottom = 1022.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "lives: 42345"
+text = "3"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -135,6 +168,7 @@ script/script = SubResource( 3 )
 
 [node name="Fuel" type="Label" parent="Node2D/Polygon2D"]
 
+visibility/visible = false
 rect/scale = Vector2( 3, 3 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
