@@ -33,6 +33,8 @@ func _process(delta):
 				self.get_node("ShotPlayer").play("shot2")
 	self.pressed = Input.is_action_pressed("shoot")
 	Globals.set('fuel', Globals.get('fuel') - FUEL_DISCHARGE_SPEED)
+	if Globals.get('fuel') <= 0:
+		self.lose()
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -42,15 +44,19 @@ func _ready():
 	self.set_process_input(true)
 	self.get_node("Area2D").add_to_group("player")
 
+func lose():
+	Globals.set('lifes', Globals.get('lifes')-1)
+	self.set_pos(Vector2(1920/2, self.get_pos().y))
+	self.get_parent().get_node("Stage").reload(current_level)
+	Globals.set('fuel', 1000)
+	if Globals.get('lifes') < 0:
+		self.get_parent().get_node("Stage").reload(0)
+		self.get_parent().get_node("Stage").stop()
+
+
 func _on_Area2D_area_enter( area ):
 	print(area, area.get_groups())
 	if area.is_in_group("edge") or area.is_in_group("enemies") or area.is_in_group("bridge"):
-		Globals.set('lifes', Globals.get('lifes')-1)
-		self.set_pos(Vector2(1920/2, self.get_pos().y))
-		self.get_parent().get_node("Stage").reload(current_level)
-		
-		if Globals.get('lifes') < 0:
-			self.get_parent().get_node("Stage").reload(0)
-			self.get_parent().get_node("Stage").stop()
+		self.lose()
 	if area.is_in_group("checkpoint"):
 		current_level = int(area.get_name())-1
