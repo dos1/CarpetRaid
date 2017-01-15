@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://level.gd" type="Script" id=1]
 [ext_resource path="res://Fuel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://rozdarcie.png" type="Texture" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -209,6 +210,82 @@ contained = true
 [node name="Fuel" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 1367.52, 236.116 )
+
+[node name="rozdarcie" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 902.611, 616.979 )
+transform/scale = Vector2( 1, 1.37963 )
+texture = ExtResource( 4 )
+
+[node name="rozdarcie" type="Sprite" parent="rozdarcie"]
+
+transform/pos = Vector2( -173.034, -151.316 )
+transform/rot = 89.2737
+transform/scale = Vector2( 1, 1.19143 )
+texture = ExtResource( 4 )
+
+[node name="rozdarcie 2" type="Sprite" parent="rozdarcie"]
+
+transform/pos = Vector2( -346.619, -1954.48 )
+transform/scale = Vector2( 1, 12.0088 )
+texture = ExtResource( 4 )
+
+[node name="rozdarcie" type="Sprite" parent="rozdarcie/rozdarcie 2"]
+
+transform/pos = Vector2( 178.719, -2448.18 )
+texture = ExtResource( 4 )
+
+[node name="rozdarcie 3" type="Sprite" parent="rozdarcie"]
+
+transform/pos = Vector2( -232.476, -5147.07 )
+texture = ExtResource( 4 )
+
+[node name="rozdarcie 2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 707.945, -4559.7 )
+transform/rot = -90.748
+transform/scale = Vector2( 1, 1.04496 )
+texture = ExtResource( 4 )
+
+[node name="rozdarcie 3" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1295.93, 617.458 )
+transform/scale = Vector2( 1, 1.40473 )
+texture = ExtResource( 4 )
+
+[node name="rozdarcie" type="Sprite" parent="rozdarcie 3"]
+
+transform/pos = Vector2( 199.02, -149.286 )
+transform/rot = -89.6372
+transform/scale = Vector2( 1, 1.34299 )
+texture = ExtResource( 4 )
+
+[node name="rozdarcie 2" type="Sprite" parent="rozdarcie 3"]
+
+transform/pos = Vector2( 393.123, -1925.87 )
+transform/scale = Vector2( 1, 11.8301 )
+texture = ExtResource( 4 )
+
+[node name="rozdarcie 4" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1299.66, -4681.39 )
+transform/rot = 2.95506
+transform/scale = Vector2( 1, 0.812248 )
+texture = ExtResource( 4 )
+
+[node name="rozdarcie 5" type="Sprite" parent="."]
+
+transform/pos = Vector2( 858.342, -4679.04 )
+transform/scale = Vector2( 1, 0.845957 )
+texture = ExtResource( 4 )
+
+[node name="rozdarcie 6" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1496.61, -4571.9 )
+transform/rot = -87.8719
+transform/scale = Vector2( 1, 1.27227 )
+texture = ExtResource( 4 )
 
 [connection signal="area_enter" from="Area2D" to="Area2D" method="_on_Area2D_area_enter"]
 

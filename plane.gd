@@ -51,6 +51,7 @@ func lose():
 	self.get_parent().get_node("Stage").reload(current_level)
 	Globals.set('fuel', 1000)
 	if Globals.get('lifes') < 0:
+		current_level = 0
 		self.get_parent().get_node("Stage").reload(0)
 		self.get_parent().get_node("Stage").stop()
 
