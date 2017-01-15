@@ -64,7 +64,10 @@ func _process(delta):
 	if self.get_pos().y - self.get_item_and_children_rect().size.height + 1080 + 400 >=0:
 		var node = levels[current_level % 3].instance()
 		self.add_child(node)
-		node.set_pos(Vector2(0, -self.get_item_and_children_rect().size.height + 400))
+		if current_level == 1:
+			node.set_pos(Vector2(-190, -self.get_item_and_children_rect().size.height + 400 + 650))			
+		else:
+			node.set_pos(Vector2(-190, -self.get_item_and_children_rect().size.height + 400))
 		
 		var b = bridge.instance()
 		node.add_child(b)

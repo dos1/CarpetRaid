@@ -12,7 +12,7 @@ points = Vector2Array( 401.208, -723.629, 1075.89, -730.479, 1072.46, -182.514, 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 182.022, -5078.91, 921.774, -5082.34, 921.774, -4904.25, 682.04, -4897.4 )
+points = Vector2Array( 193.521, -5281.3, 919.413, -5291.55, 921.774, -4904.25, 682.04, -4897.4 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 
@@ -27,32 +27,32 @@ points = Vector2Array( 664.916, 491.386, 918.35, 494.811, 918.35, 831.221, 182.0
 [sub_resource type="ConvexPolygonShape2D" id=5]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 182.022, -5078.91, 682.04, -4897.4, 688.889, -3722.9, 404.632, -2911.23 )
+points = Vector2Array( 671.765, -175.664, 664.916, 491.386, 182.022, 845.756, 401.208, -723.629 )
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 671.765, -175.664, 664.916, 491.386, 182.022, 845.756, 401.208, -723.629 )
+points = Vector2Array( 401.208, -723.629, 182.022, 845.756, 193.521, -5281.3, 404.632, -2911.23 )
 
 [sub_resource type="ConvexPolygonShape2D" id=7]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 401.208, -723.629, 182.022, 845.756, 182.022, -5078.91, 404.632, -2911.23 )
+points = Vector2Array( 688.889, -3722.9, 404.632, -2911.23, 193.521, -5281.3, 682.04, -4897.4 )
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 1603.31, -4894.92, 1284.8, -4894.92, 1291.65, -5066.15, 2120.45, -5059.96 )
+points = Vector2Array( 2113.6, 836.598, 1267.68, 842.51, 1267.68, 496.607, 1486.86, 496.607 )
 
 [sub_resource type="ConvexPolygonShape2D" id=9]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 2113.6, 836.598, 1267.68, 842.51, 1267.68, 496.607, 1486.86, 496.607 )
+points = Vector2Array( 1305.35, -1363.05, 1291.65, -2306.46, 1839.62, -2313.31, 1846.47, -1369.9 )
 
 [sub_resource type="ConvexPolygonShape2D" id=10]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 1305.35, -1363.05, 1291.65, -2306.46, 1839.62, -2313.31, 1846.47, -1369.9 )
+points = Vector2Array( 1284.8, -4894.92, 1282.36, -5277.2, 2110.78, -5287.45, 1603.31, -4894.92 )
 
 [sub_resource type="ConvexPolygonShape2D" id=11]
 
@@ -62,17 +62,17 @@ points = Vector2Array( 1486.86, 496.607, 1480.01, -181.499, 1849.89, -191.774, 2
 [sub_resource type="ConvexPolygonShape2D" id=12]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 2120.45, -5059.96, 2113.6, 836.598, 1849.89, -191.774, 1846.47, -1369.9 )
+points = Vector2Array( 2110.78, -5287.45, 2113.6, 836.598, 1849.89, -191.774, 1846.47, -1369.9 )
 
 [sub_resource type="ConvexPolygonShape2D" id=13]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 2120.45, -5059.96, 1846.47, -1369.9, 1839.62, -2313.31, 1839.62, -3724.92 )
+points = Vector2Array( 2110.78, -5287.45, 1846.47, -1369.9, 1839.62, -2313.31, 1839.62, -3724.92 )
 
 [sub_resource type="ConvexPolygonShape2D" id=14]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 1603.31, -4894.92, 2120.45, -5059.96, 1839.62, -3724.92, 1596.46, -3731.77 )
+points = Vector2Array( 1603.31, -4894.92, 2110.78, -5287.45, 1839.62, -3724.92, 1596.46, -3731.77 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -132,14 +132,14 @@ script/script = ExtResource( 1 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 
 build_mode = 0
-polygon = Vector2Array( 918.35, 831.221, 918.35, 494.811, 664.916, 491.386, 671.765, -175.664, 1072.46, -182.514, 1075.89, -730.479, 401.208, -723.629, 404.632, -2911.23, 925.199, -2911.23, 921.774, -3722.9, 688.889, -3722.9, 682.04, -4897.4, 921.774, -4904.25, 921.774, -5082.34, 182.022, -5078.91, 182.022, 845.756 )
+polygon = Vector2Array( 918.35, 831.221, 918.35, 494.811, 664.916, 491.386, 671.765, -175.664, 1072.46, -182.514, 1075.89, -730.479, 401.208, -723.629, 404.632, -2911.23, 925.199, -2911.23, 921.774, -3722.9, 688.889, -3722.9, 682.04, -4897.4, 921.774, -4904.25, 919.413, -5291.55, 193.521, -5281.3, 182.022, 845.756 )
 shape_range = Vector2( 0, 6 )
 trigger = false
 
 [node name="CollisionPolygon2D 2" type="CollisionPolygon2D" parent="Area2D"]
 
 build_mode = 0
-polygon = Vector2Array( 1267.68, 842.51, 1267.68, 496.607, 1486.86, 496.607, 1480.01, -181.499, 1849.89, -191.774, 1846.47, -1369.9, 1305.35, -1363.05, 1291.65, -2306.46, 1839.62, -2313.31, 1839.62, -3724.92, 1596.46, -3731.77, 1603.31, -4894.92, 1284.8, -4894.92, 1291.65, -5066.15, 2120.45, -5059.96, 2113.6, 836.598 )
+polygon = Vector2Array( 1267.68, 842.51, 1267.68, 496.607, 1486.86, 496.607, 1480.01, -181.499, 1849.89, -191.774, 1846.47, -1369.9, 1305.35, -1363.05, 1291.65, -2306.46, 1839.62, -2313.31, 1839.62, -3724.92, 1596.46, -3731.77, 1603.31, -4894.92, 1284.8, -4894.92, 1282.36, -5277.2, 2110.78, -5287.45, 2113.6, 836.598 )
 shape_range = Vector2( 7, 13 )
 trigger = false
 

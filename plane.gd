@@ -45,6 +45,7 @@ func _ready():
 	self.get_node("Area2D").add_to_group("player")
 
 func lose():
+	#return
 	Globals.set('lifes', Globals.get('lifes')-1)
 	self.set_pos(Vector2(1920/2, self.get_pos().y))
 	self.get_parent().get_node("Stage").reload(current_level)
