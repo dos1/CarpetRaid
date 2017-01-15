@@ -13,6 +13,8 @@ var pressed = false
 
 var current_level = 0
 
+var losing = false
+
 func _process(delta):
 	if not Globals.get("started"):
 		return
@@ -46,6 +48,9 @@ func _ready():
 
 func lose():
 	#return
+	#self.losing = true
+	#self.get_node("Area2D/Sprite").set_texture(load("res://Gracz_d.png"));
+	#self.get_node("Area2D/Sprite").set_hframes(15)
 	Globals.set('lifes', Globals.get('lifes')-1)
 	self.set_pos(Vector2(1920/2, self.get_pos().y))
 	self.get_parent().get_node("Stage").reload(current_level)

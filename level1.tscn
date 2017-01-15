@@ -231,16 +231,6 @@ transform/pos = Vector2( -346.619, -1954.48 )
 transform/scale = Vector2( 1, 12.0088 )
 texture = ExtResource( 4 )
 
-[node name="rozdarcie" type="Sprite" parent="rozdarcie/rozdarcie 2"]
-
-transform/pos = Vector2( 178.719, -2448.18 )
-texture = ExtResource( 4 )
-
-[node name="rozdarcie 3" type="Sprite" parent="rozdarcie"]
-
-transform/pos = Vector2( -232.476, -5147.07 )
-texture = ExtResource( 4 )
-
 [node name="rozdarcie 2" type="Sprite" parent="."]
 
 transform/pos = Vector2( 707.945, -4559.7 )
