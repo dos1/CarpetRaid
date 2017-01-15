@@ -22,9 +22,9 @@ var SPEED_MODIFIERS = {
 
 var POINTS = {
   "Rocket": 100,
-  "Boatie": 100,
-  "Boat": 100,
-  "Helicopter": 100
+  "Boatie": 30,
+  "Boat": 30,
+  "Helicopter": 60
 }
 
 var speed_type_modifier = 1

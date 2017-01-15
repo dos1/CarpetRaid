@@ -7,7 +7,7 @@ extends Area2D
 var active = false
 
 var FUEL_RECHARGE_SPEED = 20
-var FUEL_POINTS = 10
+var FUEL_POINTS = 80
 
 func _process(delta):
 	if self.active:
