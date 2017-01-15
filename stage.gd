@@ -68,8 +68,9 @@ func _process(delta):
 		
 		var b = bridge.instance()
 		node.add_child(b)
-		bridge.set_name(str(current_level))
-		b.set_pos(Vector2(1920/2, node.get_item_and_children_rect().size.height - 1350))
+		b.set_name(str(current_level))
+		#b.set_pos(Vector2(1920/2, node.get_item_and_children_rect().size.height - 1350))
+		b.set_pos(Vector2(1920/2, 1080 - 200))
 		current_level+=1
 		
 	#print("cleanup")
