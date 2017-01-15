@@ -34,6 +34,9 @@ func _process(delta):
 		return
 
 	if self.moving:
+		if self.get_global_pos().y < 0:
+			return
+		#print(self.get_global_pos())
 		if self.left:
 			self.move_local_x(-1*SPEED*delta*speed_modifier*speed_type_modifier)
 		else:
