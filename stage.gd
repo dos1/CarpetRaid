@@ -73,7 +73,7 @@ func _process(delta):
 		node.add_child(b)
 		b.set_name(str(current_level))
 		#b.set_pos(Vector2(1920/2, node.get_item_and_children_rect().size.height - 1350))
-		b.set_pos(Vector2(1920/2, 1080 - 200))
+		b.set_pos(Vector2(1920/2 + 100, 1080 - 200))
 		current_level+=1
 		
 	#print("cleanup")
@@ -84,6 +84,8 @@ func _process(delta):
 			child.queue_free()
 
 func reload(level):
+	self.started = false
+	Globals.set("started", false)
 	for child in self.get_children():
 		child.queue_free()
 	self.set_pos(Vector2(0,0))
@@ -100,4 +102,5 @@ func _ready():
 	#addEnemy()
 	self.stop()
 	self.reload(0)
+	#self.set_pos(Vector2(0, 4750))
 	self.set_process(true)

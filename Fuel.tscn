@@ -19,6 +19,7 @@ transform/pos = Vector2( 1172.31, -311.849 )
 
 [node name="Area2D 2" type="Area2D" parent="."]
 
+transform/scale = Vector2( 0.8, 0.8 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 0.1, 0, 0, 0.1, 0, 0 )
