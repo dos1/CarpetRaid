@@ -11,7 +11,7 @@ var level3 = preload("res://level3.tscn")
 var levels = [level1, level2, level3]
 var current_level = 1
 var bridge = preload("res://Bridge.tscn")
-var SPEED = 100
+var SPEED = 150
 var ENEMIES = ["Helicopter", "Rocket", "Boatie", "Boat"]
 
 var started = false

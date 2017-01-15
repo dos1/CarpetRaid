@@ -24,6 +24,11 @@ func _process(delta):
 		fuel = 0
 	Globals.set('fuel', fuel)
 	
+	if fuel < 300:
+		self.get_node("SamplePlayer").play("beep")
+	else:
+		self.get_node("SamplePlayer").stop_all()
+	
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
