@@ -15,7 +15,36 @@ var current_level = 0
 
 var losing = false
 
+var delay = 0
+
 func _process(delta):
+	
+	if self.losing:
+		delay += delta
+		if self.delay > 0.5:
+			self.delay = 0
+			
+			#self.get_node("Area2D/Sprite").set_frame(self.get_node("Area2D/Sprite").get_frame()+1)
+			
+			#if self.get_node("Area2D/Sprite").get_frame() >= 14:
+			if true:
+				self.get_node("Area2D/Sprite").set_texture(preload("res://plane.png"));
+				self.get_node("Area2D/Sprite").set_hframes(4)
+	
+				
+				Globals.set('lifes', Globals.get('lifes')-1)
+				self.set_pos(Vector2(1920/2, self.get_pos().y))
+				self.get_parent().get_node("Stage").reload(current_level)
+				Globals.set('fuel', 1000)
+				if Globals.get('lifes') < 0:
+					current_level = 0
+					self.get_parent().get_node("Stage").reload(0)
+					self.get_parent().get_node("Stage").stop()
+		
+				self.losing = false
+			
+		return
+	
 	if not Globals.get("started"):
 		return
 	if (Input.is_action_pressed("move_left")):
@@ -48,18 +77,19 @@ func _ready():
 
 func lose():
 	#return
-	#self.losing = true
-	#self.get_node("Area2D/Sprite").set_texture(load("res://Gracz_d.png"));
-	#self.get_node("Area2D/Sprite").set_hframes(15)
-	Globals.set('lifes', Globals.get('lifes')-1)
-	self.set_pos(Vector2(1920/2, self.get_pos().y))
-	self.get_parent().get_node("Stage").reload(current_level)
-	Globals.set('fuel', 1000)
-	if Globals.get('lifes') < 0:
-		current_level = 0
-		self.get_parent().get_node("Stage").reload(0)
-		self.get_parent().get_node("Stage").stop()
+	self.losing = true
+	self.get_node("Area2D/Sprite").set_texture(preload("res://Gracz_d.png"));
+	self.get_node("Area2D/Sprite").set_hframes(15)
+	self.get_node("Area2D/Sprite").set_frame(0)
 
+	#Globals.set('lifes', Globals.get('lifes')-1)
+	#self.set_pos(Vector2(1920/2, self.get_pos().y))
+	#self.get_parent().get_node("Stage").reload(current_level)
+	#Globals.set('fuel', 1000)
+	#if Globals.get('lifes') < 0:
+	#	current_level = 0
+	#	self.get_parent().get_node("Stage").reload(0)
+	#	self.get_parent().get_node("Stage").stop()
 
 func _on_Area2D_area_enter( area ):
 	print(area, area.get_groups())
