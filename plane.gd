@@ -7,9 +7,11 @@ extends Node2D
 var bullet = preload("res://Bullet.tscn")
 
 var SPEED = 200
-var FUEL_DISCHARGE_SPEED = 1
+var FUEL_DISCHARGE_SPEED = 0.5
 
 var pressed = false
+
+var current_level = 0
 
 func _process(delta):
 	if (Input.is_action_pressed("move_left")):
@@ -43,3 +45,6 @@ func _on_Area2D_area_enter( area ):
 	if area.is_in_group("edge") or area.is_in_group("enemies") or area.is_in_group("bridge"):
 		Globals.set('lifes', Globals.get('lifes')-1)
 		self.set_pos(Vector2(1920/2, self.get_pos().y))
+		self.get_parent().get_node("Stage").reload(current_level)
+	if area.is_in_group("checkpoint"):
+		current_level = int(area.get_name())-1

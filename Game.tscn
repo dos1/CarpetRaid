@@ -1,14 +1,13 @@
-[gd_scene load_steps=15 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://game.gd" type="Script" id=1]
 [ext_resource path="res://tlowoda_1024.png" type="Texture" id=2]
 [ext_resource path="res://interfejs.jpg" type="Texture" id=3]
 [ext_resource path="res://stage.gd" type="Script" id=4]
-[ext_resource path="res://level1.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Plane.tscn" type="PackedScene" id=6]
-[ext_resource path="res://GUIbg.png" type="Texture" id=7]
-[ext_resource path="res://Interfejs.png" type="Texture" id=8]
-[ext_resource path="res://pasekpaliwa_720.png" type="Texture" id=9]
+[ext_resource path="res://Plane.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GUIbg.png" type="Texture" id=6]
+[ext_resource path="res://Interfejs.png" type="Texture" id=7]
+[ext_resource path="res://pasekpaliwa_720.png" type="Texture" id=8]
 
 [sub_resource type="GDScript" id=1]
 
@@ -78,9 +77,7 @@ texture = ExtResource( 3 )
 
 script/script = ExtResource( 4 )
 
-[node name="Level1" parent="Stage" instance=ExtResource( 5 )]
-
-[node name="Plane" parent="." instance=ExtResource( 6 )]
+[node name="Plane" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 949.166, 814.613 )
 
@@ -96,7 +93,7 @@ uv = Vector2Array(  )
 color = Color( 1, 1, 1, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
-texture/texture = ExtResource( 7 )
+texture/texture = ExtResource( 6 )
 texture/offset = Vector2( 0, 0 )
 texture/scale = Vector2( 2, 2 )
 texture/rotation = 0.0
@@ -107,7 +104,7 @@ invert/border = 100.0
 
 transform/pos = Vector2( 934.555, 998.407 )
 transform/scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/Polygon2D/Interfejs"]
 
@@ -118,7 +115,7 @@ uv = Vector2Array(  )
 color = Color( 1, 1, 1, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
-texture/texture = ExtResource( 9 )
+texture/texture = ExtResource( 8 )
 texture/offset = Vector2( 0, 0 )
 texture/scale = Vector2( 1, 1 )
 texture/rotation = 0.0
