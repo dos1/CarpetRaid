@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=1]
+[gd_scene load_steps=18 format=1]
 
 [ext_resource path="res://game.gd" type="Script" id=1]
 [ext_resource path="res://tlowoda_1024.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Interfejs.png" type="Texture" id=7]
 [ext_resource path="res://pasekpaliwa_720.png" type="Texture" id=8]
 [ext_resource path="res://Beep_triple.smp" type="Sample" id=9]
+[ext_resource path="res://boom.smp" type="Sample" id=10]
+[ext_resource path="res://Fail_1.wav" type="Sample" id=11]
 
 [sub_resource type="GDScript" id=1]
 
@@ -33,6 +35,8 @@ script/source = "extends Label\n\n# class member variables go here, for example:
 [sub_resource type="SampleLibrary" id=6]
 
 samples/beep = { "db":0.0, "pitch":1.0, "sample":ExtResource( 9 ) }
+samples/boom = { "db":0.0, "pitch":1.0, "sample":ExtResource( 10 ) }
+samples/fail = { "db":0.0, "pitch":1.0, "sample":ExtResource( 11 ) }
 
 [node name="Game" type="Node2D"]
 
@@ -189,7 +193,7 @@ script/script = SubResource( 4 )
 
 [node name="SamplePlayer" type="SamplePlayer" parent="."]
 
-config/polyphony = 1
+config/polyphony = 4
 config/samples = SubResource( 6 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0

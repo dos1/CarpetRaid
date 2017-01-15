@@ -40,7 +40,9 @@ func _process(delta):
 					current_level = 0
 					self.get_parent().get_node("Stage").reload(0)
 					self.get_parent().get_node("Stage").stop()
-		
+					self.get_parent().get_node("SamplePlayer").stop_all()
+					self.get_parent().get_node("SamplePlayer").play("fail")
+					
 				self.losing = false
 			
 		return
@@ -78,6 +80,7 @@ func _ready():
 func lose():
 	#return
 	self.losing = true
+
 	self.get_node("Area2D/Sprite").set_texture(preload("res://Gracz_d.png"));
 	self.get_node("Area2D/Sprite").set_hframes(15)
 	self.get_node("Area2D/Sprite").set_frame(0)
