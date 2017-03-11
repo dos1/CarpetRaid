@@ -26,12 +26,12 @@ func _process(delta):
 			
 			#self.get_node("Area2D/Sprite").set_frame(self.get_node("Area2D/Sprite").get_frame()+1)
 			
-			#if self.get_node("Area2D/Sprite").get_frame() >= 14:
-			if true:
+			if self.get_node("Area2D/Sprite").get_frame() >= self.get_node("Area2D/Sprite").get_hframes() - 1:
 				self.get_node("Area2D/Sprite").set_texture(preload("res://plane.png"));
 				self.get_node("Area2D/Sprite").set_hframes(4)
 	
-				
+				get_node("Area2D/CollisionPolygon2D").set_trigger(false)
+
 				Globals.set('lifes', Globals.get('lifes')-1)
 				self.set_pos(Vector2(1920/2, self.get_pos().y))
 				self.get_parent().get_node("Stage").reload(current_level)
@@ -78,9 +78,10 @@ func _ready():
 	self.get_node("Area2D").add_to_group("player")
 
 func lose():
-	#return
+	if self.losing:
+		return
 	self.losing = true
-
+	get_node("Area2D/CollisionPolygon2D").set_trigger(true)
 	self.get_node("Area2D/Sprite").set_texture(preload("res://Gracz_d.png"));
 	self.get_node("Area2D/Sprite").set_hframes(15)
 	self.get_node("Area2D/Sprite").set_frame(0)

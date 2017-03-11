@@ -12,8 +12,11 @@ func _process(delta):
 		return
 	self.acc = 0
 	var frame = self.get_frame() + 1
-	if (frame>3):
-		frame=0
+	if (frame>=self.get_hframes()):
+		if (self.get_hframes() < 10):
+			frame=0
+		else:
+			frame=self.get_hframes() - 1
 	self.set_frame(frame)
 
 func _ready():
