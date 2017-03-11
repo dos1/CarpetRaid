@@ -16,19 +16,19 @@
 
 script/source = "extends Node2D\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tif self.get_pos().y >= 1024:\n\t\tself.set_pos(self.get_pos() + Vector2(0, -1024))\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n"
 
-[sub_resource type="GDScript" id=5]
+[sub_resource type="GDScript" id=2]
 
 script/source = "extends Polygon2D\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tvar p = self.get_polygon()\n\tp[2].x = 725.1894 * Globals.get(\'fuel\') / 1000\n\tp[3].x = 713.58 * Globals.get(\'fuel\') / 1000\n\tself.set_polygon(p)\n\t\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n\tpass\n"
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=3]
 
 script/source = "extends Label\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tself.set_text(str(Globals.get(\'score\')))\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n\tpass\n"
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=4]
 
 script/source = "extends Label\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tself.set_text(str(Globals.get(\'lifes\')))\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n\tpass\n"
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=5]
 
 script/source = "extends Label\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tself.set_text(\"Fuel: \" + str(Globals.get(\'fuel\')))\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n\tpass\n"
 
@@ -130,7 +130,7 @@ texture/scale = Vector2( 1, 1 )
 texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
-script/script = SubResource( 5 )
+script/script = SubResource( 2 )
 
 [node name="Score" type="Label" parent="Node2D/Polygon2D"]
 
@@ -152,7 +152,7 @@ text = "9999"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = SubResource( 2 )
+script/script = SubResource( 3 )
 
 [node name="Lifes" type="Label" parent="Node2D/Polygon2D"]
 
@@ -170,7 +170,7 @@ text = "3"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = SubResource( 3 )
+script/script = SubResource( 4 )
 
 [node name="Fuel" type="Label" parent="Node2D/Polygon2D"]
 
@@ -189,7 +189,7 @@ text = "fuel: 2435"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = SubResource( 4 )
+script/script = SubResource( 5 )
 
 [node name="SamplePlayer" type="SamplePlayer" parent="."]
 

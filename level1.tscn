@@ -213,7 +213,6 @@ transform/pos = Vector2( 1367.52, 236.116 )
 
 [node name="rozdarcie" type="Sprite" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 902.611, 616.979 )
 transform/scale = Vector2( 1, 1.37963 )
 texture = ExtResource( 4 )
