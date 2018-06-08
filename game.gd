@@ -25,9 +25,7 @@ func _process(delta):
 	Globals.set('fuel', fuel)
 	
 	if fuel < 300:
-		self.get_node("SamplePlayer").play("beep")
-	else:
-		self.get_node("SamplePlayer").stop_all()
+		self.get_node("SamplePlayer").play("beep", true)
 	
 func _ready():
 	# Called every time the node is added to the scene.

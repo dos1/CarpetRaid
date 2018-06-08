@@ -85,6 +85,7 @@ func lose():
 	self.get_node("Area2D/Sprite").set_texture(preload("res://Gracz_d.png"));
 	self.get_node("Area2D/Sprite").set_hframes(15)
 	self.get_node("Area2D/Sprite").set_frame(0)
+	self.get_parent().get_node("SamplePlayer").play("boom")
 
 	#Globals.set('lifes', Globals.get('lifes')-1)
 	#self.set_pos(Vector2(1920/2, self.get_pos().y))

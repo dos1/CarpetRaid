@@ -15,29 +15,117 @@
 
 [sub_resource type="GDScript" id=1]
 
-script/source = "extends Node2D\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tif self.get_pos().y >= 1024:\n\t\tself.set_pos(self.get_pos() + Vector2(0, -1024))\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n"
+script/source = "extends Node2D
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _process(delta):
+	if self.get_pos().y >= 1024:
+		self.set_pos(self.get_pos() + Vector2(0, -1024))
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	self.set_process(true)
+"
 
 [sub_resource type="GDScript" id=2]
 
-script/source = "extends Polygon2D\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tvar p = self.get_polygon()\n\tp[2].x = 725.1894 * Globals.get(\'fuel\') / 1000\n\tp[3].x = 713.58 * Globals.get(\'fuel\') / 1000\n\tself.set_polygon(p)\n\t\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n\tpass\n"
+script/source = "extends Polygon2D
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _process(delta):
+	var p = self.get_polygon()
+	p[2].x = 725.1894 * Globals.get('fuel') / 1000
+	p[3].x = 713.58 * Globals.get('fuel') / 1000
+	self.set_polygon(p)
+	
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	self.set_process(true)
+	pass
+"
 
 [sub_resource type="GDScript" id=3]
 
-script/source = "extends Label\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tself.set_text(str(Globals.get(\'score\')))\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n\tpass\n"
+script/source = "extends Label
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _process(delta):
+	self.set_text(str(Globals.get('score')))
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	self.set_process(true)
+	pass
+"
 
 [sub_resource type="GDScript" id=4]
 
-script/source = "extends Label\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tself.set_text(str(Globals.get(\'lifes\')))\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n\tpass\n"
+script/source = "extends Label
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _process(delta):
+	self.set_text(str(Globals.get('lifes')))
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	self.set_process(true)
+	pass
+"
 
 [sub_resource type="GDScript" id=5]
 
-script/source = "extends Label\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _process(delta):\n\tself.set_text(\"Fuel: \" + str(Globals.get(\'fuel\')))\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tself.set_process(true)\n\tpass\n"
+script/source = "extends Label
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _process(delta):
+	self.set_text(\"Fuel: \" + str(Globals.get('fuel')))
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	self.set_process(true)
+	pass
+"
 
 [sub_resource type="SampleLibrary" id=6]
 
-samples/beep = { "db":0.0, "pitch":1.0, "sample":ExtResource( 9 ) }
-samples/boom = { "db":0.0, "pitch":1.0, "sample":ExtResource( 10 ) }
-samples/fail = { "db":0.0, "pitch":1.0, "sample":ExtResource( 11 ) }
+samples/beep = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 9 )
+}
+samples/boom = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 10 )
+}
+samples/fail = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 11 )
+}
 
 [node name="Game" type="Node2D"]
 
