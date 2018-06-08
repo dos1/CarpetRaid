@@ -1,6 +1,7 @@
 extends Node2D
 
 var old_score = 0
+var beepbeep = -1
 
 func _input(event):
 	if (event.type == InputEvent.KEY) and (event.pressed):
@@ -24,8 +25,11 @@ func _process(delta):
 		fuel = 0
 	Globals.set('fuel', fuel)
 	
-	if fuel < 300:
-		self.get_node("SamplePlayer").play("beep", true)
+	if fuel < 300 and self.beepbeep == -1:
+		self.beepbeep = self.get_node("SamplePlayer").play("beep", true)
+	if fuel >= 300 and self.beepbeep != -1:
+		self.get_node("SamplePlayer").stop(self.beepbeep)
+		self.beepbeep = -1
 	
 func _ready():
 	# Called every time the node is added to the scene.
